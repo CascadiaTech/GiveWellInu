@@ -1,0 +1,897 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+}
+.flexbox-vertical-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.CreateAccount-Card{
+background-color: rgba(34, 34, 34, 0.904);
+border: 2px;
+border-style: solid;
+border-color: #ffffff; 
+max-width: 40vw;
+width: 40vw;
+margin-bottom: 2vh;
+margin-left: 30vw;
+min-height: 10vh;
+margin-right: 30vw;
+padding-left: 2vw;
+padding-right: 2vw;
+padding-bottom: 2vh;
+padding-top: 2vh;
+border-radius: 15px;
+text-align: center;
+transition: 1s;
+} 
+
+.Dapp-card{
+  width: fit-content;
+  min-width: 300px;
+  height: fit-content;
+  min-height: 200px;
+  background-color: rgba(233, 233, 233, 0.768);
+  border: 1px solid;
+  border-color:rgb(216, 216, 216);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+}
+
+.HoverCard {
+  padding: 0px 0px;
+  height: 20vh;
+  width: 30vw;
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(2, 255, 183, 0.897);
+  border-radius: 10px;
+    max-width: 22vw;
+    min-width: 5vw;
+    max-height: 32vh;
+    margin-right: 2vw;
+    margin-top: 20;
+    transition: 1s;
+  
+  }
+  .HoverCard:hover {
+  transform: scale(1.1);
+  transition: 1s;
+  }
+  
+.NFT-card{
+  width: fit-content;
+  min-width: 300px;
+  height: fit-content;
+  padding: 7%;
+  min-height: 200px;
+  color: #ffffff;
+  border-color: rgb(126, 126, 126);
+  border-radius: 10px;
+  background-color: #000000be;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+}
+
+.Form-button{
+  text-align: center;
+  min-width: 100px;
+  color: rgba(240, 240, 240, 0.977); 
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.979); 
+  border-radius: 10px;
+  font-weight: 600;
+  border: 2px solid;
+  max-height: 6vh;
+  height: 6vh;
+  font-family: 'montserrat sans-serif';
+  align-items: center;
+  justify-content: center;
+}
+.Account-Form-button{
+  text-align: center;
+  width: fit-content;
+  min-width: 100px;
+  color: rgba(240, 240, 240, 0.977); 
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.979); 
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  border: 2px solid;
+  max-height: 6vh;
+  height: 6vh;
+  font-family: 'montserrat sans-serif';
+  align-items: center;
+  justify-content: center;
+}
+
+
+.HeaderButton {
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: calc(3 * (0.35vw + 0.35vh));
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: '10px';
+  margin-top: 15px;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(122, 124, 124, 0.897);
+  width: 16vw;
+  min-width: 100px;
+  height: 8vh;
+  max-height: 5vh;
+  border-radius: 15px;
+  min-height: 5vh;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  margin-right: 2.5vw;
+  padding-left: 3%;
+  padding-right: 3%;
+  cursor: pointer;
+  transition: 0.5s;
+  transition: 0.5s;
+}
+
+.TestButton {
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: calc(3 * (0.35vw + 0.35vh));
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 15px;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(122, 124, 124, 0.897);
+  border-radius: 15px;
+  width: 300px;
+  min-width: 100px;
+  height: 8vh;
+  max-height: 5vh;
+  min-height: 5vh;
+  transition: 0.5s;
+}
+.HeaderButton:hover {
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: calc(3 * (0.35vw + 0.35vh));
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 15px;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(255, 255, 255, 0.897);
+  border-radius: 15px;
+  width: 16vw;
+  min-width: 100px;
+  height: 8vh;
+  max-height: 5vh;
+  min-height: 5vh;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  margin-right: 2.5vw;
+  padding-left: 3%;
+  padding-right: 3%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.Dashboard-Button{
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: calc(3 * (0.35vw + 0.35vh));
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 15px;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(122, 124, 124, 0.897);
+  border-radius: 15px;
+  width: 16vw;
+  min-width: 100px;
+  height: 8vh;
+  max-height: 5vh;
+  min-height: 15px;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+  transition: 0.5s;
+}
+.Dashboard-Button:hover{
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: calc(3 * (0.35vw + 0.35vh));
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 15px;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(255, 255, 255, 0.897);
+  border-radius: 15px;
+  width: 16vw;
+  min-width: 100px;
+  height: 8vh;
+  max-height: 5vh;
+  min-height: 15px;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.MintButton{
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: calc(3 * (0.2vw + 0.2vh));
+  font-family: 'OpenDyslexic3';
+  color: #ffffff;
+  border-color: rgb(126, 126, 126);
+  border-radius: 10px;
+  background-color: #000000be;
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.5);
+  width: 17vw;
+  min-width: 100px;
+  height: 10vh;
+  max-height: 10vh;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  transition: 0.5s;
+}
+.MintButton:hover{
+  transform: scale(1.1);
+  transition: ease-in-out;
+  border-color: rgba(255, 255, 255, 0.979); 
+  color: rgba(255, 255, 255, 0.979); 
+  transition: 0.5s;
+}
+.MintButton-math{
+  border-style: solid;
+  border-width: 2px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: calc(3 * (0.2vw + 0.2vh));
+  font-family: 'OpenDyslexic3';
+  color: #ffffff;
+  border-color: rgb(126, 126, 126);
+  border-radius: 10px;
+  background-color: #000000be;
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.5);
+  width: fit-content;
+  min-width: 50px;
+  height: 10vh;
+  max-height: 10vh;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  transition: 0.5s;
+}
+.MintButton-math:hover{
+  transform: scale(1.1);
+  transition: ease-in-out;
+  border-color: rgba(255, 255, 255, 0.979); 
+  color: rgba(255, 255, 255, 0.979); 
+  transition: 0.5s;
+}
+.createaccount {
+  border-style: solid;
+  border-width: 1px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  font-size: calc(3 * (0.3vw + 0.3vh));
+  font-family: 'Montserrat, sans-serif';
+  color: #ffffff;
+  background-color: rgba(34, 34, 34, 0.904);
+  border-color: rgba(122, 124, 124, 0.897);
+  border-radius: 10px;
+  width: 15vw;
+  min-height: 5vh;
+  margin-top: 2vh;
+  height: fit-content;
+  max-height: 10vh;
+  transition: 1s;
+}
+.createaccount:hover {
+  transform: scale(1.03);
+  transition: 1s;
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.897);
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: #0042ac;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type=submit]:hover {
+  width: 100%;
+  background-color: #0042acba;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Pointedly-Mad{
+  color: #ffffff;
+  font-family: 'Rye Regular';
+}
+.FAQheadertext{
+  color: #ffffff;
+  font-family: 'Rye, cursive'
+}
+
+.HoverText {
+  transition: 1s;
+}
+.HoverText:hover {
+  transform: scale(1.1);
+  transition: 1s;
+  }
+
+.header-image {
+  padding-bottom: 10;
+   align-items: 'right';
+   float: 'left';
+   width: '20vw';
+  height: '20vh';
+  align-self: 'right';
+  }
+
+  .footersocialimage{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    visibility: visible;
+  }
+
+  .dapp-header-image{
+      width: 400px;
+      min-width: 400px;
+      height: auto;
+    }
+
+    .faqdropdown {
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 5px solid white;
+      border-radius: 100px;
+      transition: .5s;
+    }
+    
+    .faqdropdown:focus {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 100px;
+      transition: .5s;
+    }
+    .footer-logo{
+     padding-left: 6vw;
+     margin-left: 3vw;
+     margin-right: 8vw;
+     max-height: auto;
+     width: 20vw;
+     height: auto;
+    }
+
+
+    @media only screen and (max-width: 550px) {
+      .header-image {
+        display: inline-block;
+        vertical-align: top;
+        align-self: top;
+      }
+      .footer-logo{
+        padding-left: 6vw;
+        margin-left: 3vw;
+        margin-right: 8vw;
+        max-height: auto;
+        width: 130px;
+        min-width: 130px;
+        height: auto;
+       }
+
+     }
+    
+    @media only screen and (max-width: 350px) {
+
+      .socialimage {
+        position: relative;
+        animation: mymobilemove 8s infinite;
+        transition: 1s;
+        width: 11vw;
+        height: 'auto';
+         max-width: 10vw;
+      }
+      
+
+      .flexbox-socialimage-container {
+        display: flex;
+        flex-direction: row;
+        visibility: hidden;
+        width:0vw;
+      }
+    
+    }
+
+    @media only screen and (max-width: 650px) { 
+      .Dapp-card {
+        min-height: 20vh;
+        max-height: 50vh;
+        max-width: 99vw;
+        min-width: 275px;
+        border-radius: 15px;
+        padding-left: 1px;
+        padding-right:1px;
+       border: 1px solid;
+       margin-top: 2vh;
+       color: #000000;
+       font-weight: 700;
+       position: relative;
+       font-style: underline;
+       top: 0;
+       transition: 0.5s;
+       font-family: 'montserrat sans-serif';
+        position: relative;
+        background-color:transparent;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+      }
+      .dapp-header-image {
+        width: 300px;
+        height: 'auto';
+        max-height: 'auto';
+        padding: '0%';
+        padding-right: '0%';
+      
+      }
+    
+      .centeronmobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    @media only screen and (max-width: 800px) { 
+      .footersocialimage{
+        visibility: hidden;
+        width: 0vw;
+        height: 0vh;
+      }
+    }
+    @keyframes mymove {
+      0% {transform: translateX(0vw); opacity: 0;}
+      25% {transform: translateX(34vw); opacity: 1;}
+      50% {transform: translateX(34vw); opacity: 1;}
+      75% {transform: translateX(34vw); opacity: 1;}
+      100% {transform: translateX(88vw); opacity: 0;}
+    }
+    
+      a.header.uni:link {color:#ffffff;}
+      a.header.uni:visited {color:#ffffff;}
+      a.header.uni:hover {color: rgba(255, 255, 255, 0.675); font-size: 110% }
+    
+        a.Git:link {color:#ffffff;}
+        a.Git:visited {color:#ffffff;}
+        a.Git:hover {color: rgb(74, 29, 255)}
+    
+        a.Quote:link {color:#ffffff;}
+        a.Quote:visited {color:#ffffff;}
+        a.Quote:hover {color: rgb(74, 29, 255)} 
+    
+        a.four:link {color:#ffffff;}
+        a.four:visited {color:#ffffff;}
+        a.four:hover {color: rgba(255, 255, 255, 0.742)}
+    
+        a.five:link {color:#ffffff;}
+        a.five:visited {color:#ffffff;}
+        a.five:hover {color: rgba(255, 255, 255, 0.742)}
+    
+        a.six:link {color:#000000;}
+        a.six:visited {color:#000000;}
+        a.six:hover {color: rgba(255, 255, 255, 0.949)}
+
+        .Form-button-input{
+          text-align: center;
+          width: 200px;
+          color: rgba(240, 240, 240, 0.977); 
+          background-color: transparent;
+          border-color: rgba(0, 0, 0, 0.979);  
+          border-radius: 10px;
+          font-size: 18px;
+          border: 2px solid;
+          max-height: 6vh;
+          height: 6vh;
+          align-self: 'center';
+          justify-content: center;
+          transition: 0.5s;
+          cursor: pointer;
+        }
+        .Form-button-input:hover{
+          text-align: center;
+          width: 200px;
+          min-width: 100px;
+          max-width: 20vw;
+          color: rgba(0, 0, 0, 0.979); 
+          background-color: rgba(194, 194, 194, 0.912);
+          border-color: rgba(0, 0, 0, 0.979); 
+          border-radius: 10px;
+          font-weight: 500;
+          font-size: 18px;
+          border: 2px solid;
+          max-height: 6vh;
+          height: 6vh;
+          font-family: 'montserrat sans-serif';
+          align-items: center;
+          justify-content: center;
+          transition: 0.5s;
+          cursor: pointer;
+        }
+        .dropdown {
+          position: relative;
+          display: inline-block;
+          color: #ffffff;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .Rexcard{
+          border-style: solid;
+          border-width: 1px;
+          font-size: calc(3 * (0.3vw + 0.3vh));
+          color: #ffffff;
+          background-color: #070F15;
+          border-color: rgba(2, 255, 183, 0.897);
+          padding-left: 5%;
+          padding-right: 5%;
+          transition: 1s;
+        }
+        
+
+        .tab {
+          overflow: hidden;
+          background-color: 'transparent';
+          color:rgba(240, 240, 240, 0.977)
+        }
+        
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          min-width: '400px';
+          cursor: pointer;
+          border: 1px;
+          border-color: rgba(2, 255, 183, 0.897);
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+          color:rgba(240, 240, 240, 0.977)
+        }
+        
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          border: 1px;
+          border-color: rgba(2, 255, 183, 0.897);
+          border-radius: 10px;
+        }
+        
+        /* Create an active/current tablink class */
+        .tab button.active {
+          border: 1px;
+          border-color: rgba(2, 255, 183, 0.897);
+          border-radius: 10px;
+        }
+
+        .buytab {
+          overflow: hidden;
+          border-radius: 10px;
+          border: 1px solid #ffffff;
+          color:rgba(240, 240, 240, 0.977)
+        }
+        .buytab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+          color:rgba(240, 240, 240, 0.977)
+        }
+        
+        /* Change background color of buttons on hover */
+        .buytab button:hover {
+          background-color: rgba(21, 255, 0, 0.977);
+          color: #ffffffbe;
+        }
+        
+        /* Create an active/current tablink class */
+        .buytab button.active {
+          background-color: rgba(21, 255, 0, 0.977);
+          color: #ffffffbe;
+        }
+        /* Style the tab content */
+        .buytab button:focus {
+          background-color: rgba(81, 255, 0, 0.977);
+          color: #ffffffbe;
+        }
+
+        .selltab {
+          overflow: hidden;
+          border-radius: 10px;
+          border: 1px solid #ffffff;
+          color:rgba(255, 255, 255, 0.977)
+        }
+        .selltab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+          color:rgba(250, 250, 250, 0.977)
+        }
+        
+        /* Change background color of buttons on hover */
+        .selltab button:hover {
+          background-color: rgba(255, 0, 0, 0.977);
+          color: #ffffffbe;
+        }
+        
+        /* Create an active/current tablink class */
+        .selltab button.active {
+          background-color: rgba(255, 0, 0, 0.977);
+          color: #ffffffbe;
+        }
+        .selltab button:focus {
+          background-color: rgba(255, 0, 0, 0.977);
+          color: #ffffffbe;
+        }
+        .header-image {
+          padding-bottom: 10;
+          align-items: 'right';
+          float: 'left';
+          transform:translate(1%, -5%);
+          width: 40vw;
+          max-width: 40vw;
+          height: 'auto';
+          align-self: 'right';
+         }
+
+        .MakeItNice {
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 13px;
+          font-variant-numeric: tabular-nums;
+          display: inline-block;
+          background-color: #070F15;
+          color: rgba(255, 255, 255, 0.6);
+          padding: 50px 0;
+        }
+
+        .MakeItNice__side-header {
+          margin: 0 0 5px 0;
+          font-weight: 700;
+          text-align: right;
+        }
+
+        .MakeItNice__list {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .MakeItNice__list-item {
+          cursor: pointer;
+          padding: 3px 50px 3px 20px;
+          display: flex;
+        }
+
+        .MakeItNice__list-item:hover {
+          background: rgb(18, 29, 39);
+        }
+
+        .MakeItNice__price {
+          flex: 0 0 70px;
+          color: var(--row-color);
+          text-align: right;
+          display: inline-block;
+          margin-right: 15px;
+        }
+
+        .MakeItNice__size {
+          flex: 0 0 70px;
+        }
+
+        .MakeItNice__spread {
+          border-width: 1px 0;
+          border-style: solid;
+          border-color: rgba(255, 255, 255, 0.2);
+          padding: 5px 20px;
+          text-align: center;
+          display: flex;
+        }
+
+        .MakeItNice__spread-header {
+          margin: 0 15px 0 0;
+          flex: 0 0 70px;
+          text-align: right;
+        }
+
+        .MakeItNice__spread-value {
+          width: 28px;
+          overflow: hidden;
+        }
+
+        .divwithimage {
+          background-image: url('../assets/images/house.jpg');
+          background-repeat: no-repeat;
+          background-position: center; 
+          max-width: '400px';
+          height: '400px';
+          max-height: '400px';
+          width: '400px';
+      
+        }
+
+        .divwithcityimage {
+          background-image: url('../assets/images/city.jpeg');
+          background-repeat: no-repeat;
+          background-position: center; 
+          max-width: '400px';
+          height: '400px';
+          max-height: '400px';
+          width: '400px';
+      
+        }
+
+        .divwithhouseimage {
+          background-image: url('../assets/images/houseimage.png');
+          background-repeat: no-repeat;
+          background-position: center; 
+      
+        }
+        .divwithcity2image {
+          background-image: url('../assets/images/city2.jpg');
+          background-repeat: no-repeat;
+          background-position: center; 
+          max-width: '400px';
+          height: '400px';
+          max-height: '400px';
+          width: '400px';
+      
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Asap", sans-serif;
+}
+body{
+  background: #42455a;
+}
+section{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-child(1){
+  color: #e0ffff;
+  }
+section:nth-child(2){
+  color: #42455a;
+  background: #e0ffff;
+} 
+section:nth-child(3){
+  color: #e0ffff;
+}
+section:nth-child(4){
+  color: #42455a;
+  background: #e0ffff;
+}
+section .container{
+  margin: 100px;
+}
+section h1{
+  font-size: 3rem;
+  margin: 20px;
+}
+section h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+section .text-container{
+   display: flex;
+}
+section .text-container .text-box{
+  margin: 20px;
+  padding: 20px;
+  background: #00c2cb;
+}
+section .text-container .text-box h3{
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px){
+  section h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+  section .text-container{
+    flex-direction: column;
+  }
+}

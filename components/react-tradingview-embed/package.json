@@ -1,0 +1,60 @@
+{
+  "name": "react-tradingview-embed",
+  "version": "3.0.6",
+  "description": "React components for TradingView Embeds",
+  "private": false,
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k-128/react-tradingview-embed/"
+  },
+  "author": "k",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript",
+    "tradingview"
+  ],
+  "homepage": "https://github.com/k-128/react-tradingview-embed",
+  "scripts": {
+    "build": "tsc --build \"./tsconfig.json\""
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^4.6.3"
+  },
+  "resolutions": {
+    "webpack": "^5.70.0"
+  },
+  "types": "./dist/index.d.ts",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
