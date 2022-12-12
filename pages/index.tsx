@@ -7,17 +7,30 @@ import "tailwindcss-elevation";
 import FooterComponent from "../components/Footer/FooterComponent";
 import DualCardComponent from "../components/DualCards/DualCardComponent";
 import ScrollpositionAnimation from "../hooks/OnScroll";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "@uniswap/widgets/fonts.css";
 import { useWeb3React } from "@web3-react/core";
 import MintCardComponent from "../components/Cards/MintCard";
-import trump from "../assets/trumpimages/trump.jpg";
+import ginuLogo from '../assets/ginuAssets/ginuLogo1.png'
 const Home: NextPage = () => {
   const { account, chainId, active } = useWeb3React();
   const showConnectAWallet = Boolean(!account);
   const context = useWeb3React();
   const { library } = context;
+  const [isended, setisended] = useState(false);
+  const videoRef: any = useRef(null);
 
+  useEffect(() => {
+    videoRef.current.defaultMuted = true;
+  });
+  const attemptPlay = () => {
+    videoRef &&
+      videoRef.current &&
+      videoRef.current.load() &&
+      videoRef.current.play().catch((error: any) => {
+        console.log("error attempting to play", error);
+      });
+  };
   useEffect(() => {
     async function ScrollpositionAnimation() {
       const targets = document.querySelectorAll(".js-show-on-scroll");
@@ -43,7 +56,12 @@ const Home: NextPage = () => {
       });
       ScrollpositionAnimation();
     }
-  });
+  }, attemptPlay());
+
+  
+  function RenderButtons(){
+    setisended(true)
+  }
 
   return (
     <div className="">
@@ -52,6 +70,20 @@ const Home: NextPage = () => {
           {" "}
           <HeaderComponent></HeaderComponent>
         </header>
+        <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+          <video
+            ref={videoRef}
+            className="min-w-full min-h-full absolute object-cover"
+            playsInline
+            onEnded={() => RenderButtons()}
+            autoPlay
+            loop
+            muted
+          >
+            <source src="./ginuhomepage.mp4" type="video/mp4" /> Your browser does
+            not support the video tag, update your browser
+          </video>
+        </div>
         <div
           style={{
             display: "flex",
@@ -64,13 +96,16 @@ const Home: NextPage = () => {
         >
           <h5
             style={{ fontFamily: "Cinzel, serif" }}
-            className="mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl lg:text-5xl dark:text-white"
+            className="mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl
+            z-10 relative lg:text-5xl"
           >
-            Welcome Back Trump
+            Give Well INU
           </h5>
           <Image
-            className="w-screen mx-5 justify-center align-center md:w-auto"
-            src={trump}
+            className="w-screen mx-5 justify-center align-center z-0 absolute md:w-auto"
+            src={ginuLogo}
+            height={750}
+            width={750}
           ></Image>
           <p className={"my-12"}></p>
           <div

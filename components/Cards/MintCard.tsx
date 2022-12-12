@@ -1,5 +1,5 @@
 import "tailwindcss-elevation";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import ScrollpositionAnimation from "../../hooks/OnScroll";
 import Swal from "sweetalert2";
 import { abiObject } from "../../contracts/abi.mjs";
@@ -25,12 +25,28 @@ export default function MintCardComponent() {
   const context = useWeb3React();
   const { library } = context;
   const [quantity, setquantity] = useState(Number);
+  const [isended, setisended] = useState(false);
+  const videoRef: any = useRef(null);
+
+
   if (typeof window !== "undefined") {
     useEffect(() => {
+      {
+        videoRef.current.defaultMuted = true;
+      }
       // Update the document title using the browser API
       ScrollpositionAnimation();
     }, [window.scrollY]);
   }
+
+  const attemptPlay = () => {
+    videoRef &&
+      videoRef.current &&
+      videoRef.current.load() &&
+      videoRef.current.play().catch((error: any) => {
+        console.log("error attempting to play", error);
+      });
+  };
 
   useEffect(() => {
     async function FetchtotalSupply() {
@@ -95,7 +111,7 @@ export default function MintCardComponent() {
     FetchPublicMintPrice();
     FetchtotalSupply();
     FetchPublicMintActive();
-  }, [pubmintprice, account, library?.provider, totalSupply]);
+  }, [pubmintprice, account, library?.provider, totalSupply] ,attemptPlay());
 
   const handleMint = useCallback(async () => {
     if (!account || !quantity) {
@@ -134,10 +150,27 @@ export default function MintCardComponent() {
     }
   }, [account, library?.provider, quantity]);
 
+  function RenderButtons(){
+    setisended(true)
+  }
 
   //md:clip-path-clipsides border-t-4 border-b-4
   return (
     <div className="flex flex-col content-center items-center text-center mx-auto justify-center js-show-on-scroll">
+      <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+          <video
+            ref={videoRef}
+            className="min-w-full min-h-full absolute object-cover"
+            playsInline
+            onEnded={() => RenderButtons()}
+            autoPlay
+            loop
+            muted
+          >
+            <source src="'../../public/ginuTokenomics.mp4'" type="video/mp4" /> Your browser does
+            not support the video tag, update your browser
+          </video>
+        </div>
       <h5
         style={{ fontFamily: "Cinzel, serif" }}
         className="text-center mt-12 text-2xl sm:text-3xl mb:mb-2 text-4xl font-bold tracking-tight text-gray-100 dark:text-white"
