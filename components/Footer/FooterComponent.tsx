@@ -64,12 +64,14 @@ export default function FooterComponent() {
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="/" className="hover:underline">
-                    WelcomeBackTrump
+                    Give Well Inu. 
+                    <br/>
+                    Proof of Giving
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/"
+                    href="https://medium.com/@givewellinu"
                     className="hover:underline"
                   >
                     Documents
@@ -84,7 +86,7 @@ export default function FooterComponent() {
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a
-                    href="https://t.me/WelcomeBackTrump_Token"
+                    href="https://t.me/GiveWellInu"
                     className="hover:underline "
                   >
                     Telegram
@@ -92,7 +94,7 @@ export default function FooterComponent() {
                 </li>
                 <li>
                   <a
-                    href="https://app.uniswap.org/#/swap?outputCurrency=0xa01710ca98e4d66fd8d2044b3437c024e7a64d76"
+                    href="https://app.uniswap.org/#/swap?inputCurrency=0x74be64b45d394fa57816c1950e94dbb8d7a7b306&outputCurrency=ETH"
                     className="hover:underline"
                   >
                     Uniswap
@@ -111,7 +113,7 @@ export default function FooterComponent() {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2022{" "}
             <a href="/" className="hover:underline">
-              WelcomeBackTrump
+              Give Well Inu
             </a>
             . All Rights Reserved.
           </span>
@@ -135,7 +137,7 @@ export default function FooterComponent() {
               <span className="sr-only"></span>
             </a>
             <a
-              href="https://twitter.com/Trump_welcome1"
+              href="https://twitter.com/GiveWell_Inu"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -149,7 +151,7 @@ export default function FooterComponent() {
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="https://github.com/CascadiaTech/WelcomeBackTrump"
+              href="https://github.com/CascadiaTech/GiveWellInu"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg

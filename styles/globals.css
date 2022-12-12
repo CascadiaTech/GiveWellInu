@@ -21,6 +21,12 @@ a {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Aquire';
+  src: url('./fonts/Aquire-BW0ox.otf') 
+  format('opentype');
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

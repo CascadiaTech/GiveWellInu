@@ -111,7 +111,7 @@ export default function MintCardComponent() {
     FetchPublicMintPrice();
     FetchtotalSupply();
     FetchPublicMintActive();
-  }, [pubmintprice, account, library?.provider, totalSupply] ,attemptPlay());
+  }, [pubmintprice, account, library?.provider, totalSupply]);
 
   const handleMint = useCallback(async () => {
     if (!account || !quantity) {
@@ -172,18 +172,18 @@ export default function MintCardComponent() {
           </video>
         </div>
       <h5
-        style={{ fontFamily: "Cinzel, serif" }}
+        style={{ fontFamily:'Aquire' }}
         className="text-center mt-12 text-2xl sm:text-3xl mb:mb-2 text-4xl font-bold tracking-tight text-gray-100 dark:text-white"
       >
-        Welcome Back Trump Collection
+        Give Well Inu NFT Collection
       </h5>
       <button
         onClick={() => handleMint()}
-        style={{ fontFamily: "Cinzel, serif" }}
+        style={{ fontFamily:'Aquire' }}
         type="button"
-        className="w-screen mb-12 justify-center elevation-10 align-center hover:elevation-50 md:w-96 h-24 clip-path-mycorners justify-self-center mt-10
-        text-gray-100 bg-blue-700 transition ease-in-out duration-700 hover:scale-105 bg-blue-800 focus:ring-4
-        focus:ring-blue-300 font-medium rounded-lg text-4xl px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 
+        className="w-screen mb-12 justify-center elevation-10 align-center hover:elevation-50 md:w-96 h-24 justify-self-center mt-10
+        text-gray-100 bg-purple-700 transition ease-in-out duration-700 hover:scale-105 focus:ring-4
+        focus:ring-blue-300 font-medium rounded-xl px-5 py-2.5 dark:bg-purple-600 dark:hover:bg-blue-700 
         focus:outline-none dark:focus:ring-blue-800 text-4xl"
       >
         Mint
@@ -200,7 +200,7 @@ export default function MintCardComponent() {
         name="order_size"
         placeholder="amount of nfts"
       ></input>
-      <p className="text-center text-2xl"> Price: 0.02 ETH per NFT</p>
+      <p style={{ fontFamily:'Aquire' }} className="text-center text-2xl"> Price: 0.045 ETH per NFT</p>
     </div>
   );
 }

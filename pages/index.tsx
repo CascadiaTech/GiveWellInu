@@ -19,10 +19,6 @@ const Home: NextPage = () => {
   const { library } = context;
   const [isended, setisended] = useState(false);
   const videoRef: any = useRef(null);
-
-  useEffect(() => {
-    videoRef.current.defaultMuted = true;
-  });
   const attemptPlay = () => {
     videoRef &&
       videoRef.current &&
@@ -31,6 +27,12 @@ const Home: NextPage = () => {
         console.log("error attempting to play", error);
       });
   };
+
+  useEffect(() => {
+    videoRef.current.defaultMuted = true;
+    attemptPlay()
+  });
+
   useEffect(() => {
     async function ScrollpositionAnimation() {
       const targets = document.querySelectorAll(".js-show-on-scroll");
@@ -54,9 +56,10 @@ const Home: NextPage = () => {
         // Add the element to the watcher
         observer.observe(target);
       });
-      ScrollpositionAnimation();
+      //ScrollpositionAnimation();
     }
-  }, attemptPlay());
+    ScrollpositionAnimation();
+  });
 
   
   function RenderButtons(){
@@ -95,7 +98,7 @@ const Home: NextPage = () => {
           }
         >
           <h5
-            style={{ fontFamily: "Cinzel, serif" }}
+            style={{ fontFamily:'Aquire' }}
             className="mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl
             z-10 relative lg:text-5xl"
           >
@@ -114,30 +117,30 @@ const Home: NextPage = () => {
             <button
               onClick={() =>
                 window.open(
-                  "https://opensea.io/collection/officialwelcomebacktrump"
+                  "https://google.com"
                 )
               }
               type="button"
-              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
+              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
             >
               {" "}
               OpenSea
             </button>
             <button
-              onClick={() => window.open("https://www.welcomebacktrump.net/")}
+              onClick={() => window.open("https://www.givewellinu.com/home")}
               type="button"
-              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
+              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
             >
               Website
             </button>
             <button
               onClick={() =>
                 window.open(
-                  "https://app.uniswap.org/#/swap?outputCurrency=0xa01710ca98e4d66fd8d2044b3437c024e7a64d76"
+                  "https://app.uniswap.org/#/swap?inputCurrency=0x74be64b45d394fa57816c1950e94dbb8d7a7b306&outputCurrency=ETH"
                 )
               }
               type="button"
-              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
+              className="text-gray-100 hover:text-black border transition-all border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
             >
               Token
             </button>
