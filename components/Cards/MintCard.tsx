@@ -120,6 +120,12 @@ export default function MintCardComponent() {
         title: "Connect Your Wallet To Mint, and Enter A Mint Quantity",
       });
     }
+    if (quantity < 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Connect Your Wallet To Mint, and Enter A Mint Quantity",
+      });
+    }
 
     try {
       setLoading(true);
@@ -130,7 +136,7 @@ export default function MintCardComponent() {
         //const provider = getDefaultProvider()
         const signer = provider.getSigner()
         const contract = new Contract(contractaddress, abi, signer)
-        const ethervalue = quantity * 0.02
+        const ethervalue = quantity * 0.045
         const etherstringvalue = JSON.stringify(ethervalue)
         const MintNFT = await contract.publicMint(quantity, { value: parseEther(etherstringvalue) }) //.claim()
         const signtransaction = await signer.signTransaction(MintNFT)
@@ -189,7 +195,7 @@ export default function MintCardComponent() {
         Mint
       </button>
       <input
-        className="bg-gray-50 mb-12 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        className="bg-gray-50 mb-12 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         onChange={(e) => {
           if (Number(e.target.value) > 0) {
             setquantity(Number(e.target.value));

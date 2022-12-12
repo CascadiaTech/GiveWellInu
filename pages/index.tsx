@@ -12,6 +12,7 @@ import "@uniswap/widgets/fonts.css";
 import { useWeb3React } from "@web3-react/core";
 import MintCardComponent from "../components/Cards/MintCard";
 import ginuLogo from '../assets/ginuAssets/ginuLogo1.png'
+import ClaimComponent from "../components/Claim/ClaimComponent";
 const Home: NextPage = () => {
   const { account, chainId, active } = useWeb3React();
   const showConnectAWallet = Boolean(!account);
@@ -99,54 +100,61 @@ const Home: NextPage = () => {
         >
           <h5
             style={{ fontFamily:'Aquire' }}
-            className="mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl
+            className="js-show-on-scroll mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl
             z-10 relative lg:text-5xl"
           >
             Give Well INU
           </h5>
           <Image
-            className="w-screen mx-5 justify-center align-center z-0 absolute md:w-auto"
+            className="js-show-on-scroll w-screen mx-5 justify-center align-center z-0 absolute md:w-auto"
             src={ginuLogo}
             height={750}
             width={750}
           ></Image>
           <p className={"my-12"}></p>
           <div
-            className={"flex flex-row w-screen object-center justify-center"}
+            className={"js-show-on-scroll flex flex-row w-screen object-center justify-center"}
           >
             <button
+            style={{ fontFamily:'Aquire' }}
               onClick={() =>
                 window.open(
                   "https://google.com"
                 )
               }
               type="button"
-              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
+              className="text-gray-100 hover:text-black border transition-all duration-600 border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
             >
               {" "}
               OpenSea
             </button>
             <button
+            style={{ fontFamily:'Aquire' }}
               onClick={() => window.open("https://www.givewellinu.com/home")}
               type="button"
-              className="text-gray-100 hover:text-black border border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
+              className="text-gray-100 hover:text-black border transition-all duration-600 border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
             >
               Website
             </button>
             <button
+            style={{ fontFamily:'Aquire' }}
               onClick={() =>
                 window.open(
                   "https://app.uniswap.org/#/swap?inputCurrency=0x74be64b45d394fa57816c1950e94dbb8d7a7b306&outputCurrency=ETH"
                 )
               }
               type="button"
-              className="text-gray-100 hover:text-black border transition-all border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
+              className="text-gray-100 hover:text-black border transition-all duration-500 border-gray-200 hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg text-lg px-8 py-4 text-center mr-2 mb-2"
             >
               Token
             </button>
           </div>
         </div>
         <MintCardComponent></MintCardComponent>
+
+<hr className="my-4 mx-auto w-48 h-1 bg-gray-100 rounded border-0 md:my-10 dark:bg-gray-700"/>
+
+        <ClaimComponent></ClaimComponent>
       </main>
       <FooterComponent></FooterComponent>
     </div>

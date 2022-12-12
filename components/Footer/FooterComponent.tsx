@@ -53,7 +53,7 @@ export default function FooterComponent() {
 
   return (
     <div>
-      <footer className="p-4 bg-black sm:p-6 dark:bg-gray-900 w-screen">
+      <footer className="p-4 bg-gray-200 sm:p-6 dark:bg-gray-900 w-screen">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0"></div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
