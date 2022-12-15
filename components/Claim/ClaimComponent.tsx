@@ -23,7 +23,7 @@ export default function ClaimComponent() {
   const [claim, setcanclaim] = useState(Boolean);
   const { library } = context;
   const [uniswaprovider, setuniswapprivder] = useState();
-  const [tokenid, settokenid] = useState(Number)
+  const [tokenid, settokenid] = useState(Number);
   if (typeof window !== "undefined") {
     useEffect(() => {
       // Update the document title using the browser API
@@ -31,19 +31,11 @@ export default function ClaimComponent() {
     }, [window.scrollY]);
   }
 
-
-  const ClaimAll = useCallback(async () => {
+  const Claimtoken = useCallback(async () => {
     if (!account) {
       Swal.fire({
         icon: "error",
         title: "Connect Your Wallet To Mint, and Enter A Mint Quantity",
-        timer: 5000,
-      });
-    }
-    if (claim == false) {
-      Swal.fire({
-        icon: "error",
-        title: "You cannot claim",
         timer: 5000,
       });
     }
@@ -52,14 +44,15 @@ export default function ClaimComponent() {
       setLoading(true);
       const data = abiObject;
       const abi = data;
-      const contractaddress = "0x99dd494b0edf70caf7c3e97d5e71cd7a6ecaff1c"; // "clienttokenaddress"
+      const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3"; // "clienttokenaddress"
       const provider = new Web3Provider(
         library?.provider as ExternalProvider | JsonRpcFetchFunc
       );
       //const provider = getDefaultProvider()
       const signer = provider.getSigner();
       const contract = new Contract(contractaddress, abi, signer);
-      const ClaimTokens = await contract.ClaimAllTokens(tokenid); //.claim()
+      console.log(contract);
+      const ClaimTokens = await contract.ClaimTokens(tokenid); //.claim()
       const signtransaction = await signer.signTransaction(ClaimTokens);
       const Claimtxid = await signtransaction;
       Swal.fire({
@@ -100,7 +93,7 @@ export default function ClaimComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const abi = abiObject;
-        const contractaddress = "0x99dd494b0edf70caf7c3e97d5e71cd7a6ecaff1c";
+        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
         const contract = new Contract(contractaddress, abi, provider);
         //const FinalResult = await UserTokenBalance.toString()
         if (!account) {
@@ -110,11 +103,11 @@ export default function ClaimComponent() {
             text: "you must connect your wallet to claim",
           });
         } else {
-          const usersclaimperiod = await contract.usersPeriodId(account);
+          const usersclaimperiod = await contract.NFTSPeriodId(account);
           const currentperiod = await contract.currentRewardPeriodId();
           (await usersclaimperiod) && (await currentperiod);
-          console.log(usersclaimperiod)
-          console.log(currentperiod)
+          console.log(usersclaimperiod);
+          console.log(currentperiod);
           if (usersclaimperiod <= currentperiod) {
             setcanclaim(true);
           } else {
@@ -136,7 +129,7 @@ export default function ClaimComponent() {
     <>
       <div className="flex flex-col w-full md:px-20 content-center items-center lg:px-48 xl:px-64 js-show-on-scroll">
         <h5
-          style={{ fontFamily:'Aquire' }}
+          style={{ fontFamily: "Aquire" }}
           className="text-center mb-2 text-3xl font-bold tracking-tight self-center text-purple-100 dark:text-white"
         >
           Claim ETH Reflections
@@ -145,38 +138,36 @@ export default function ClaimComponent() {
           <Spin indicator={antIcon} className="add-spinner" />
         ) : (
           <>
-          <div  className='flex flex-row bg:white w-full content-center items-center max-w-screen'>
-            <button
-              style={{ fontFamily:'Aquire' }}
-              type="button"
-              onClick={() => ClaimAll()}
-              className="w-full mx-0 self-center content-center tn:mx-0 elevation-10 hover:elevation-50 md:mx-48 h-24 clip-path-mycorners justify-self-center mt-10
+            <div className="flex flex-row bg:white w-full content-center items-center max-w-screen">
+              <button
+                style={{ fontFamily: "Aquire" }}
+                type="button"
+                onClick={() => Claimtoken()}
+                className="w-full mx-0 self-center content-center tn:mx-0 elevation-10 hover:elevation-50 md:mx-48 h-24 clip-path-mycorners justify-self-center mt-10
             text-gray-100 bg-purple-700 transition ease-in-out duration-700 hover:bg-purple-800 hover:text-white focus:ring-4
             focus:ring-blue-300 font-medium rounded-lg text-3xl px-5 py-2.5 mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 
             focus:outline-none dark:focus:ring-blue-800 text-4xl"
-            >
-              Claim
-            </button>
-          
+              >
+                Claim
+              </button>
             </div>
             <input
-        className="bg-gray-50 mb-12 w-1/2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        onChange={(e) => {
-          if (Number(e.target.value) > 0) {
-            settokenid(Number(e.target.value));
-          }
-        }}
-        type="number"
-        id="fname"
-        name="tokenids"
-        placeholder="tokenids to claim"
-      ></input>
+              className="bg-gray-50 mb-12 w-1/2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              onChange={(e) => {
+                if (Number(e.target.value) > 0) {
+                  settokenid(Number(e.target.value));
+                }
+              }}
+              type="number"
+              id="fname"
+              name="tokenID"
+              placeholder="tokenID to claim"
+            ></input>
           </>
         )}
       </div>
 
-      <div className='content-center max-w-screen'>
-      </div>
+      <div className="content-center max-w-screen"></div>
 
       <div></div>
     </>
