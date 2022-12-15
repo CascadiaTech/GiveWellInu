@@ -12,9 +12,12 @@ import {
 import { useWeb3React } from "@web3-react/core";
 import { Contract } from "@ethersproject/contracts";
 import { formatEther, parseEther } from "@ethersproject/units";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 ///import { utils } from 'ethers'
 
 export default function MintCardComponent() {
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
   const [loading, setLoading] = useState(false);
   const [totalSupply, settotalySupply] = useState(Number);
   const [pubmintprice, setpubmintprice] = useState(Number)
@@ -24,7 +27,6 @@ export default function MintCardComponent() {
   const context = useWeb3React();
   const { library } = context;
   const [quantity, setquantity] = useState(Number);
-  const [isended, setisended] = useState(false);
   const videoRef: any = useRef(null);
 
 
@@ -156,9 +158,7 @@ export default function MintCardComponent() {
     }
   }, [account, library?.provider, quantity]);
 
-  function RenderButtons(){
-    setisended(true)
-  }
+
 
   //md:clip-path-clipsides border-t-4 border-b-4
   return (
@@ -168,7 +168,6 @@ export default function MintCardComponent() {
             ref={videoRef}
             className="min-w-full min-h-full absolute object-cover"
             playsInline
-            onEnded={() => RenderButtons()}
             autoPlay
             loop
             muted
@@ -183,21 +182,24 @@ export default function MintCardComponent() {
       >
         Give Well Inu NFT Collection
       </h5>
-      <button
-        onClick={() => handleMint()}
-        style={{ fontFamily:'Aquire' }}
-        type="button"
-        className="w-screen mb-12 justify-center elevation-10 align-center hover:elevation-50 md:w-96 h-24 justify-self-center mt-10
-        text-gray-100 bg-purple-700 transition ease-in-out duration-700 hover:scale-105 focus:ring-4
-        focus:ring-blue-300 font-medium rounded-xl px-5 py-2.5 dark:bg-purple-600 dark:hover:bg-blue-700 
-        focus:outline-none dark:focus:ring-blue-800 text-4xl"
-      >
-        Mint
-      </button>
+      {loading ? (
+          <Spin indicator={antIcon} className="add-spinner" />
+        ) : (<>      <button
+          onClick={() => handleMint()}
+          style={{ fontFamily:'Aquire' }}
+          type="button"
+          className="w-screen mb-12 justify-center elevation-10 align-center hover:elevation-50 md:w-96 h-24 justify-self-center mt-10
+          text-gray-100 bg-purple-700 transition ease-in-out duration-700 hover:scale-105 focus:ring-4
+          focus:ring-blue-300 font-medium rounded-xl px-5 py-2.5 dark:bg-purple-600 dark:hover:bg-blue-700 
+          focus:outline-none dark:focus:ring-blue-800 text-4xl"
+        >
+          Mint
+        </button></>)}
+
       <div className="mb-2"> <p>Select The Amount Of NFCT's You Would Like To Mint</p></div>
       <div className="mb-2">{quantity} NFCT's</div>
       <label htmlFor="minmax-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
-<input onChange={(e) => setquantity(Number(e.target.value))}id="minmax-range" type="range" min="1" max="10" value={quantity} className="w-1/2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
+<input onChange={(e) => setquantity(Number(e.target.value))}id="minmax-range" type="range" min="1" max="10" value={quantity} className="w-1/2 h-2 bg-purple-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
 
       <p style={{ fontFamily:'Aquire' }} className="mt-4 text-center text-2xl"> Price: 0.01 ETH per NFT</p>
     </div>
