@@ -56,7 +56,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xac046563E7104292fe9130b08360049F79A3B5BF";
+        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Totalminted = await contract.totalSupply();
         const FinalResult = Number(Totalminted);
@@ -76,7 +76,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xac046563E7104292fe9130b08360049F79A3B5BF";
+        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Mintprice = await contract.PUB_MINT_PRICE();
         const MintPriceformatted = formatEther(Mintprice);
@@ -97,7 +97,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xac046563E7104292fe9130b08360049F79A3B5BF";
+        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Mintactive = await contract.pubMintActive();
         setpubmintactive(Mintactive);
@@ -111,6 +111,7 @@ export default function MintCardComponent() {
     FetchPublicMintPrice();
     FetchtotalSupply();
     FetchPublicMintActive();
+    attemptPlay();
   }, [pubmintprice, account, library?.provider, totalSupply]);
 
   const handleMint = useCallback(async () => {
@@ -131,19 +132,19 @@ export default function MintCardComponent() {
       setLoading(true);
       const data = abiObject;
       const abi = data;
-      const contractaddress = "0xac046563E7104292fe9130b08360049F79A3B5BF"; // "clienttokenaddress"
+      const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3"; // "clienttokenaddress"
         const provider = new Web3Provider(library?.provider as ExternalProvider | JsonRpcFetchFunc)
         //const provider = getDefaultProvider()
         const signer = provider.getSigner()
         const contract = new Contract(contractaddress, abi, signer)
-        const ethervalue = quantity * 0.045
+        const ethervalue = quantity * 0.01
         const etherstringvalue = JSON.stringify(ethervalue)
         const MintNFT = await contract.publicMint(quantity, { value: parseEther(etherstringvalue) }) //.claim()
         const signtransaction = await signer.signTransaction(MintNFT)
         const Claimtxid = await signtransaction
         Swal.fire({
           icon: "success",
-          title: "Congratulations you have minted a Welcome Back Trump NFT",
+          title: "Congratulations you have minted a GiveWellINU NFT",
           text: "Go View your item on Opensea",
         });
         return Claimtxid
@@ -206,7 +207,7 @@ export default function MintCardComponent() {
         name="order_size"
         placeholder="amount of nfts"
       ></input>
-      <p style={{ fontFamily:'Aquire' }} className="text-center text-2xl"> Price: 0.045 ETH per NFT</p>
+      <p style={{ fontFamily:'Aquire' }} className="text-center text-2xl"> Price: 0.01 ETH per NFT</p>
     </div>
   );
 }
