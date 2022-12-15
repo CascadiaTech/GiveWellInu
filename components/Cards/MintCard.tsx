@@ -14,7 +14,6 @@ import { Contract } from "@ethersproject/contracts";
 import { formatEther, parseEther } from "@ethersproject/units";
 ///import { utils } from 'ethers'
 
-
 export default function MintCardComponent() {
   const [loading, setLoading] = useState(false);
   const [totalSupply, settotalySupply] = useState(Number);
@@ -121,7 +120,7 @@ export default function MintCardComponent() {
         title: "Connect Your Wallet To Mint, and Enter A Mint Quantity",
       });
     }
-    if (quantity < 0) {
+    if (quantity == 0) {
       Swal.fire({
         icon: "error",
         title: "Connect Your Wallet To Mint, and Enter A Mint Quantity",
@@ -195,19 +194,12 @@ export default function MintCardComponent() {
       >
         Mint
       </button>
-      <input
-        className="bg-gray-50 mb-12 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        onChange={(e) => {
-          if (Number(e.target.value) > 0) {
-            setquantity(Number(e.target.value));
-          }
-        }}
-        type="number"
-        id="fname"
-        name="order_size"
-        placeholder="amount of nfts"
-      ></input>
-      <p style={{ fontFamily:'Aquire' }} className="text-center text-2xl"> Price: 0.01 ETH per NFT</p>
+      <div className="mb-2"> <p>Select The Amount Of NFCT's You Would Like To Mint</p></div>
+      <div className="mb-2">{quantity} NFCT's</div>
+      <label htmlFor="minmax-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+<input onChange={(e) => setquantity(Number(e.target.value))}id="minmax-range" type="range" min="1" max="10" value={quantity} className="w-1/2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
+
+      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-center text-2xl"> Price: 0.01 ETH per NFT</p>
     </div>
   );
 }
