@@ -139,7 +139,7 @@ export default function ClaimComponent() {
           style={{ fontFamily:'Aquire' }}
           className="text-center mb-2 text-3xl font-bold tracking-tight self-center text-purple-100 dark:text-white"
         >
-          Claim ETH Reflections
+          Claim ETH Rewards
         </h5>
         {loading ? (
           <Spin indicator={antIcon} className="add-spinner" />
