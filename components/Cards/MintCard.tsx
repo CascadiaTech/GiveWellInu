@@ -183,7 +183,9 @@ export default function MintCardComponent() {
         Give Well Inu NFT Collection
       </h5>
       {loading ? (
+        <div className="content-center items-center">
           <Spin indicator={antIcon} className="add-spinner" />
+          </div>
         ) : (<>      <button
           onClick={() => handleMint()}
           style={{ fontFamily:'Aquire' }}
@@ -196,12 +198,12 @@ export default function MintCardComponent() {
           Mint
         </button></>)}
 
-      <div className="mb-2"> <p>Select The Amount Of NFCT's You Would Like To Mint</p></div>
-      <div className="mb-2">{quantity} NFCT's</div>
+      <div className="text-white mb-2"> <p style={{ fontFamily:'Aquire' }}>Select The Amount Of NFCT's You Would Like To Mint</p></div>
+      <div style={{ fontFamily:'Aquire' }} className="text-white mb-2">{quantity} NFCT's</div>
       <label htmlFor="minmax-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
 <input onChange={(e) => setquantity(Number(e.target.value))}id="minmax-range" type="range" min="1" max="10" value={quantity} className="w-1/2 h-2 bg-purple-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
 
-      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-center text-2xl"> Price: 0.01 ETH per NFT</p>
+      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-white text-center text-2xl"> Price: 0.01 ETH per NFT</p>
     </div>
   );
 }
