@@ -44,7 +44,7 @@ export default function ClaimComponent() {
       setLoading(true);
       const data = abiObject;
       const abi = data;
-      const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3"; // "clienttokenaddress"
+      const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218"; // "clienttokenaddress"
       const provider = new Web3Provider(
         library?.provider as ExternalProvider | JsonRpcFetchFunc
       );
@@ -93,7 +93,7 @@ export default function ClaimComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const abi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, abi, provider);
         //const FinalResult = await UserTokenBalance.toString()
         if (!account) {

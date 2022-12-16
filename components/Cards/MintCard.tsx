@@ -57,7 +57,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Totalminted = await contract.totalSupply();
         const FinalResult = Number(Totalminted);
@@ -77,7 +77,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Mintprice = await contract.PUB_MINT_PRICE();
         const MintPriceformatted = formatEther(Mintprice);
@@ -98,7 +98,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Mintactive = await contract.pubMintActive();
         setpubmintactive(Mintactive);
@@ -133,7 +133,7 @@ export default function MintCardComponent() {
       setLoading(true);
       const data = abiObject;
       const abi = data;
-      const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3"; // "clienttokenaddress"
+      const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218"; // "clienttokenaddress"
         const provider = new Web3Provider(library?.provider as ExternalProvider | JsonRpcFetchFunc)
         //const provider = getDefaultProvider()
         const signer = provider.getSigner()
@@ -203,7 +203,7 @@ export default function MintCardComponent() {
       <label htmlFor="minmax-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
 <input onChange={(e) => setquantity(Number(e.target.value))}id="minmax-range" type="range" min="1" max="10" value={quantity} className="w-1/2 h-2 bg-purple-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
 
-      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-white text-center text-2xl"> Price: 0.01 ETH per NFT</p>
+      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-white text-center text-2xl"> Price: 0.05 ETH per NFT</p>
     </div>
   );
 }
