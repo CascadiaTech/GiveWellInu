@@ -180,7 +180,7 @@ export default function MintCardComponent() {
         style={{ fontFamily:'Aquire' }}
         className="text-center mt-12 text-2xl sm:text-3xl mb:mb-2 text-4xl font-bold tracking-tight text-gray-100 dark:text-white"
       >
-        Give Well Inu NFT Collection
+        Give Well Inu NFCT Collection
       </h5>
       {loading ? (
         <div className="content-center items-center">
