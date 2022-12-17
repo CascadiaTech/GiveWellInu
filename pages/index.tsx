@@ -119,7 +119,7 @@ const Home: NextPage = () => {
             style={{ fontFamily:'Aquire' }}
               onClick={() =>
                 window.open(
-                  "https://google.com"
+                  "https://opensea.io/collection/officialginunft"
                 )
               }
               type="button"
