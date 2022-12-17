@@ -100,20 +100,20 @@ const Home: NextPage = () => {
         >
           <h5
             style={{ fontFamily:'Aquire' }}
-            className="js-show-on-scroll mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl
+            className="mt-12 text-4xl sm:text-4xl text-4xl text-center font-bold tracking-tight text-gray-100 md:text-4xl
             z-10 relative lg:text-5xl"
           >
             Give Well INU
           </h5>
           <Image
-            className="js-show-on-scroll w-screen mx-5 justify-center align-center z-0 absolute md:w-auto"
+            className="w-screen mx-5 justify-center align-center z-0 absolute md:w-auto"
             src={ginuLogo}
             height={750}
             width={750}
           ></Image>
           <p className={"my-12"}></p>
           <div
-            className={"js-show-on-scroll flex flex-row w-screen object-center justify-center"}
+            className={"flex flex-row w-screen object-center justify-center"}
           >
             <button
             style={{ fontFamily:'Aquire' }}

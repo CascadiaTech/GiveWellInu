@@ -26,7 +26,7 @@ export default function MintCardComponent() {
   const showConnectAWallet = Boolean(!account);
   const context = useWeb3React();
   const { library } = context;
-  const [quantity, setquantity] = useState(Number);
+  const [quantity, setquantity] = useState(1);
   const videoRef: any = useRef(null);
 
 
@@ -57,7 +57,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Totalminted = await contract.totalSupply();
         const FinalResult = Number(Totalminted);
@@ -77,7 +77,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Mintprice = await contract.PUB_MINT_PRICE();
         const MintPriceformatted = formatEther(Mintprice);
@@ -98,7 +98,7 @@ export default function MintCardComponent() {
           library?.provider as ExternalProvider | JsonRpcFetchFunc
         );
         const NFTabi = abiObject;
-        const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3";
+        const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218";
         const contract = new Contract(contractaddress, NFTabi, provider);
         const Mintactive = await contract.pubMintActive();
         setpubmintactive(Mintactive);
@@ -133,12 +133,12 @@ export default function MintCardComponent() {
       setLoading(true);
       const data = abiObject;
       const abi = data;
-      const contractaddress = "0xED8614FC0acDf1033Cca5635D573F760df71f1b3"; // "clienttokenaddress"
+      const contractaddress = "0xC1948D3FECaF1B33bB5b1bff22f944Cdc595C218"; // "clienttokenaddress"
         const provider = new Web3Provider(library?.provider as ExternalProvider | JsonRpcFetchFunc)
         //const provider = getDefaultProvider()
         const signer = provider.getSigner()
         const contract = new Contract(contractaddress, abi, signer)
-        const ethervalue = quantity * 0.01
+        const ethervalue = quantity * 0.05
         const etherstringvalue = JSON.stringify(ethervalue)
         const MintNFT = await contract.publicMint(quantity, { value: parseEther(etherstringvalue) }) //.claim()
         const signtransaction = await signer.signTransaction(MintNFT)
@@ -162,7 +162,7 @@ export default function MintCardComponent() {
 
   //md:clip-path-clipsides border-t-4 border-b-4
   return (
-    <div className="flex flex-col content-center items-center text-center mx-auto justify-center js-show-on-scroll">
+    <div className="flex flex-col content-center items-center text-center mx-auto justify-center">
       <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
           <video
             ref={videoRef}
@@ -203,7 +203,7 @@ export default function MintCardComponent() {
       <label htmlFor="minmax-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
 <input onChange={(e) => setquantity(Number(e.target.value))}id="minmax-range" type="range" min="1" max="10" value={quantity} className="w-1/2 h-2 bg-purple-400 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"/>
 
-      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-white text-center text-2xl"> Price: 0.01 ETH per NFT</p>
+      <p style={{ fontFamily:'Aquire' }} className="mt-4 text-white text-center text-2xl"> Price: 0.05 ETH per NFT</p>
     </div>
   );
 }
