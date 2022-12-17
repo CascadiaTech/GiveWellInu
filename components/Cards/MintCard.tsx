@@ -26,7 +26,7 @@ export default function MintCardComponent() {
   const showConnectAWallet = Boolean(!account);
   const context = useWeb3React();
   const { library } = context;
-  const [quantity, setquantity] = useState(Number);
+  const [quantity, setquantity] = useState(1);
   const videoRef: any = useRef(null);
 
 
@@ -162,7 +162,7 @@ export default function MintCardComponent() {
 
   //md:clip-path-clipsides border-t-4 border-b-4
   return (
-    <div className="flex flex-col content-center items-center text-center mx-auto justify-center js-show-on-scroll">
+    <div className="flex flex-col content-center items-center text-center mx-auto justify-center">
       <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
           <video
             ref={videoRef}
